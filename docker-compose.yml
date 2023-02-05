@@ -1,0 +1,10 @@
+version: '3'
+services:
+  python3:
+    restart: always
+    build: .
+    container_name: 'ai-generated-image_storer_container'
+    working_dir: '/root/'
+    tty: true
+    volumes:
+      - ./src:/root/src
