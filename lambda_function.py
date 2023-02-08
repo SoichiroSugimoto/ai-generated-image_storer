@@ -1,6 +1,7 @@
 import io
 import os
 import time
+import json
 import boto3
 from PIL import Image
 from stability_sdk import client
@@ -15,8 +16,10 @@ def lambda_handler(event, context):
     verbose=True,
   )
 
+  receive_body = json.parse(event['body'])
+  prompt_text = json.loads(receive_body['text'])
   answers = stability_api.generate(
-    prompt="Beautiful mirror under the sea"
+    prompt=prompt_text
   )
 
   for resp in answers:
