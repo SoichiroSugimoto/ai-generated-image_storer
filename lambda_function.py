@@ -12,7 +12,7 @@ BUCKET_NAME = "ai-generated-image"
 
 def lambda_handler(event, context):
   stability_api = client.StabilityInference(
-    key=os.environ['STABILITY_KEY'],
+    key=os.getenv['STABILITY_KEY'],
     verbose=True,
   )
 
