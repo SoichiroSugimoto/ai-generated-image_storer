@@ -3,10 +3,10 @@
 # remove
 touch ai-generated-image_storer.zip
 rm ai-generated-image_storer.zip
-cd ai-generated-image_storer
+cd stability-sdk-api
 
 # compress
-zip -r ../ai-generated-image_storer.zip ./*
+zip -r stability-sdk-api ./*
 cd ..
 
 if [ ! -f ./lambda_layer.zip ]; then
