@@ -10,6 +10,12 @@ import stability_sdk.interfaces.gooseai.generation.generation_pb2 as generation
 s3 = boto3.resource('s3')
 BUCKET_NAME = "ai-generated-image"
 
+def request_validation(params):
+  auth_token = os.getenv['AUTH_TOKEN']
+  if (params.token != auth_token):
+    return False
+  return True
+
 def lambda_handler(event, context):
   stability_api = client.StabilityInference(
     key=os.getenv['STABILITY_KEY'],
