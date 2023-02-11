@@ -16,4 +16,5 @@ if [ ! -f ./lambda_layer.zip ]; then
   pip install -t ./python pynamodb
   pip install -t ./python stability-sdk
   zip -r ./lambda_layer.zip ./python
+  rm -r ./python
 fi
