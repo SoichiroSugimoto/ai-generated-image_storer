@@ -14,6 +14,8 @@ def request_validation(params):
   auth_token = os.getenv['AUTH_TOKEN']
   if (params.token != auth_token):
     return False
+  if (params.prompt_text == ''):
+    return False
   return True
 
 def lambda_handler(event, context):
