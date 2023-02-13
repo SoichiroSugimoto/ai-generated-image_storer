@@ -21,7 +21,7 @@ def request_validation(params):
 def lambda_handler(event, context):
   stability_api = client.StabilityInference(
     key=os.getenv['STABILITY_KEY'],
-    verbose=True,
+    verbose=True
   )
 
   receive_body = json.parse(event['body'])
