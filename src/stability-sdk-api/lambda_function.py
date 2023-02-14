@@ -43,6 +43,8 @@ def lambda_handler(event, context):
         object_key_name = str(time.time()) + '.png'
         obj = bucket.Object(object_key_name)
         r = obj.put(img)
+        url = "https://"
         return {
-        'statusCode': 200
+        'statusCode': 200,
+        'url': url
         }
